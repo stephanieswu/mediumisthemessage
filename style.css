@@ -8,3 +8,20 @@ canvas {
   margin:0 auto;
   padding: 1rem;
 }
+
+a{
+  color: white;
+  text-decoration: none;
+}
+a:hover{
+  color: blue;
+}
+.next{
+  text-align: center;
+  font-size: 1.5rem;
+  float: top;
+  color: white;
+  padding: 2rem;
+
+
+}
