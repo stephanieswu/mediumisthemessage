@@ -108,7 +108,7 @@ sound.mousePressed(togglePlaying);
 function togglePlaying() {
   if (!wordsworth.isPlaying()) {
     wordsworth.play();
-    song.setVolume(0.3);
+    wordsworth.setVolume(0.5);
   } else {
     wordsworth.stop();
 
@@ -117,7 +117,7 @@ function togglePlaying() {
 function togglePlaying2() {
   if (!beep.isPlaying()) {
     beep.play();
-    song.setVolume(0.3);
+    beep.setVolume(0.5);
   } else {
     beep.stop();
 
