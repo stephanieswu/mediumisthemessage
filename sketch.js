@@ -70,11 +70,14 @@ let hearing;
 let edit;
 let go;
 let sound;
+//let goose;
 
 let wordsworth;
+let beep;
 
 function preload() {
   wordsworth = loadSound('wordsworth.mp3')
+  beep = loadSound('beep.wav')
 }
 
 function setup(){
@@ -88,16 +91,39 @@ go.mousePressed(changeFont2);
 alphabet = select("#alphabet");
 alphabet.mousePressed(alphabetChange);
 hearing = select("#hearing");
-hearing.mousePressed(showEar);
+hearing.mousePressed(togglePlaying2);
 edit = select("#edit");
 edit.mousePressed(showInput);
 sound = select("#sound");
-edit.mousePressed(wordsworth.play());
+sound.mousePressed(togglePlaying);
+//goose = select("#goose");
+//goose.mousePressed(wordsworth.pause());
+
 
 
 
 
 }
+
+function togglePlaying() {
+  if (!wordsworth.isPlaying()) {
+    wordsworth.play();
+    song.setVolume(0.3);
+  } else {
+    wordsworth.stop();
+
+  }
+}
+function togglePlaying2() {
+  if (!beep.isPlaying()) {
+    beep.play();
+    song.setVolume(0.3);
+  } else {
+    beep.stop();
+
+  }
+}
+
 function alphabetChange() {
   let length = 1;
   let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
@@ -119,9 +145,7 @@ function alphabetChange() {
 
 }
 
-function showEar() {
 
-}
 function changeFont() {
 
     mediaP.style("font-family", "Helvetica");
