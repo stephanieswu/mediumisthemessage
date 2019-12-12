@@ -76,7 +76,7 @@ let wordsworth;
 let beep;
 
 function preload() {
-  wordsworth = loadSound('wordsworth.mp3')
+  wordsworth = loadSound('wordsworth.m4a')
   beep = loadSound('beep.wav')
 }
 
