@@ -1,6 +1,0 @@
-class Hearing(){
-  constructor(){
-      
-
-  }
-}

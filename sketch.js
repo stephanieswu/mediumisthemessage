@@ -61,12 +61,21 @@ function pattern(){
 let mediaP;
 let textbox;
 let state = false;
+let button;
 
 let alter;
 let change;
 let alphabet;
 let hearing;
 let edit;
+let go;
+let sound;
+
+let wordsworth;
+
+function preload() {
+  wordsworth = loadSound('wordsworth.mp3')
+}
 
 function setup(){
 mediaP = select("#mediaP");
@@ -74,24 +83,32 @@ alter = select("#alter");
 alter.mousePressed(showSlider)
 change = select("#change");
 change.mousePressed(changeFont);
+go = select("#go");
+go.mousePressed(changeFont2);
 alphabet = select("#alphabet");
 alphabet.mousePressed(alphabetChange);
 hearing = select("#hearing");
 hearing.mousePressed(showEar);
 edit = select("#edit");
 edit.mousePressed(showInput);
+sound = select("#sound");
+edit.mousePressed(wordsworth.play());
+
+
 
 
 }
 function alphabetChange() {
-  let length = 10;
+  let length = 1;
   let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
 "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 
 
   for(let i =0; i <length; i++){
-      for(let x =0; x <26; x++){
+      for(let x =0; x <25; x++){
         a = createP(letters[x])
+        a.style('font-size', random(36)+'pt')
+        a.style('color', "lightblue")
         a.position(random(1920),random(300,800));
 
       }
@@ -115,13 +132,8 @@ function changeFont() {
     }
 }
 function changeFont2() {
-
-    mediaP.style("font-family", "Helvetica");
-    mediaP.style("color", "yellow")
-    function mouseRelease() {
       mediaP.style("font-family", "Times");
-      mediaP.style("color", "white")
-    }
+      mediaP.style("color", "black")
 }
 
 function showInput(){
@@ -139,8 +151,8 @@ function showInput(){
 function showSlider() {
   //textbox = createInput("Media, by altering the environment, evoke in us unique ratios of sense perceptions. The extension of any one sense alters the way we think and act–the way we perceive the world. When these ratios change, we change")
   //textbox.position(500,100);
-  let slider = createSlider(12,72,0);
-  slider.position(100,200);
+  let slider = createSlider(12,72,24);
+  slider.position(550,50);
 //  textbox.input(updateText);
   slider.input(updateSize);
 
