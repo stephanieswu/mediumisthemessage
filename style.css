@@ -2,26 +2,27 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: black;
-}
-canvas {
-  display: block;
-  margin:0 auto;
-  padding: 1rem;
+  color: white;
 }
 
-a{
-  color: white;
-  text-decoration: none;
+#mediaP{
+  font-family: Times ;
+  padding-top: 100px;
+  margin: 0 auto;
+  font-size: 25pt;
+  max-width: 700px;
+
 }
-a:hover{
+
+button{
+  text-align: left;
+  font-size: 20pt;
+  background: none;
+  border: none;
   color: blue;
+  text-decoration: underline;
 }
-.next{
-  text-align: center;
-  font-size: 1.5rem;
-  float: top;
-  color: white;
-  padding: 2rem;
 
-
+button:hover{
+  background: white;
 }

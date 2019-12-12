@@ -1,4 +1,4 @@
-let s = "Media, by altering the environment, evoke in us unique ratios of sense perceptions. "
+/*let s = "Media, by altering the environment, evoke in us unique ratios of sense perceptions. "
 
 let s2 ="The extension of any one sense alters the way we think and act–the way we perceive the world. "
 
@@ -56,4 +56,63 @@ function pattern(){
       fill(i,75,y);
     }
   }
+}*/
+
+let mediaP;
+let textbox;
+
+let alter;
+let change;
+let alphabet;
+
+function setup(){
+mediaP = select("#mediaP");
+alter = select("#alter");
+alter.mousePressed(showSlider)
+change = select("#change");
+change.mousePressed(changeFont);
+alphabet = select("#alphabet");
+alphabet.mousePressed(alphabetChange);
+
+}
+function alphabetChange() {
+  let length = 50;
+
+
+  for(let i =0; i <length; i++){
+      let letters = createP("abc");
+      letters.position(random(2000),random(1000));
+  }
+
+}
+
+function changeFont() {
+  mediaP.style("font-family", "Helvetica");
+  mediaP.style("color", "yellow")
+
+
+}
+function showSlider() {
+  //textbox = createInput("Media, by altering the environment, evoke in us unique ratios of sense perceptions. The extension of any one sense alters the way we think and act–the way we perceive the world. When these ratios change, we change")
+  //textbox.position(500,100);
+  let slider = createSlider(10,60,0);
+  slider.position(100,200);
+//  textbox.input(updateText);
+  slider.input(updateSize);
+
+
+function updateSize(){
+ mediaP.style("font-size", slider.value() + 'pt')
+}
+
+
+function updateText(){
+   mediaP.html(textbox.value());
+};
+
+
+}
+
+function draw(){
+  mediaP.html(textbox.value());
 }
