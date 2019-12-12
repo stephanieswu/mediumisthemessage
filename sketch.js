@@ -149,6 +149,7 @@ function alphabetChange() {
 function changeFont() {
 
     mediaP.style("font-family", "Helvetica");
+    mediaP.style("font-size", random(20) + "pt")
     mediaP.style("color", "yellow")
     function mouseRelease() {
       mediaP.style("font-family", "Times");
@@ -162,9 +163,9 @@ function changeFont2() {
 
 function showInput(){
   textbox = createInput("edit text")
-  textbox.position(900,900);
+  textbox.position(random(0,900),random(500,900));
   textbox.style("font-size", '18pt');
-  textbox.style("font-family", 'Times')
+  textbox.style("font-family", 'Geogria')
   //let text = createP(textbox.value(),100,100);
   textbox.input(updateText);
   function updateText(){
@@ -176,7 +177,7 @@ function showSlider() {
   //textbox = createInput("Media, by altering the environment, evoke in us unique ratios of sense perceptions. The extension of any one sense alters the way we think and act–the way we perceive the world. When these ratios change, we change")
   //textbox.position(500,100);
   let slider = createSlider(12,72,24);
-  slider.position(550,50);
+  slider.position(random(900),random(100,300));
 //  textbox.input(updateText);
   slider.input(updateSize);
 
