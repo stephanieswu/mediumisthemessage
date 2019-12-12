@@ -66,7 +66,7 @@ let alter;
 let change;
 let alphabet;
 let hearing;
-let edit;
+let go;
 
 function setup(){
 mediaP = select("#mediaP");
@@ -78,8 +78,8 @@ alphabet = select("#alphabet");
 alphabet.mousePressed(alphabetChange);
 hearing = select("#hearing");
 hearing.mousePressed(showEar);
-edit = selectAll('.edit');
-edit.mousePressed(showInput);
+go = select("#go");
+go.mousePressed(showInput);
 
 
 }
@@ -116,8 +116,8 @@ function changeFont() {
 }
 
 function showInput(){
-  textbox = createInput("editing")
-  textbox.position(random(500,1000),random(500,1000));
+  textbox = createInput("edit text")
+  textbox.position(900,600);
   textbox.style("font-size", '18pt');
   textbox.style("font-family", 'Times')
   //let text = createP(textbox.value(),100,100);
