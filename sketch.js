@@ -60,10 +60,13 @@ function pattern(){
 
 let mediaP;
 let textbox;
+let state = false;
 
 let alter;
 let change;
 let alphabet;
+let hearing;
+let edit;
 
 function setup(){
 mediaP = select("#mediaP");
@@ -73,6 +76,11 @@ change = select("#change");
 change.mousePressed(changeFont);
 alphabet = select("#alphabet");
 alphabet.mousePressed(alphabetChange);
+hearing = select("#hearing");
+hearing.mousePressed(showEar);
+edit = selectAll('.edit');
+edit.mousePressed(showInput);
+
 
 }
 function alphabetChange() {
@@ -83,9 +91,9 @@ function alphabetChange() {
 
   for(let i =0; i <length; i++){
       for(let x =0; x <26; x++){
-        y = createP(letters[x])
+        a = createP(letters[x])
+        a.position(random(1920),random(300,800));
 
-        y.position(random(1920),random(1080));
       }
 
 
@@ -94,16 +102,35 @@ function alphabetChange() {
 
 }
 
-function changeFont() {
-  mediaP.style("font-family", "Helvetica");
-  mediaP.style("color", "yellow")
-
+function showEar() {
 
 }
+function changeFont() {
+
+    mediaP.style("font-family", "Helvetica");
+    mediaP.style("color", "yellow")
+    function mouseRelease() {
+      mediaP.style("font-family", "Times");
+      mediaP.style("color", "white")
+    }
+}
+
+function showInput(){
+  textbox = createInput("editing")
+  textbox.position(random(500,1000),random(500,1000));
+  textbox.style("font-size", '18pt');
+  textbox.style("font-family", 'Times')
+  //let text = createP(textbox.value(),100,100);
+  textbox.input(updateText);
+  function updateText(){
+     go.html(textbox.value());
+  };
+}
+
 function showSlider() {
   //textbox = createInput("Media, by altering the environment, evoke in us unique ratios of sense perceptions. The extension of any one sense alters the way we think and act–the way we perceive the world. When these ratios change, we change")
   //textbox.position(500,100);
-  let slider = createSlider(10,60,0);
+  let slider = createSlider(12,72,0);
   slider.position(100,200);
 //  textbox.input(updateText);
   slider.input(updateSize);
@@ -114,13 +141,11 @@ function updateSize(){
 }
 
 
-function updateText(){
-   mediaP.html(textbox.value());
-};
+
 
 
 }
 
 function draw(){
-  mediaP.html(textbox.value());
+
 }
