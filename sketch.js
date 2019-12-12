@@ -60,12 +60,10 @@ function pattern(){
 
 let mediaP;
 let textbox;
-let state = false;
 
 let alter;
 let change;
 let alphabet;
-
 
 function setup(){
 mediaP = select("#mediaP");
@@ -81,7 +79,7 @@ function alphabetChange() {
   let length = 10;
   let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
 "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  if
+
 
   for(let i =0; i <length; i++){
       for(let x =0; x <26; x++){
