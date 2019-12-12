@@ -60,10 +60,12 @@ function pattern(){
 
 let mediaP;
 let textbox;
+let state = false;
 
 let alter;
 let change;
 let alphabet;
+
 
 function setup(){
 mediaP = select("#mediaP");
@@ -76,12 +78,20 @@ alphabet.mousePressed(alphabetChange);
 
 }
 function alphabetChange() {
-  let length = 50;
-
+  let length = 10;
+  let letters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p",
+"q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  if
 
   for(let i =0; i <length; i++){
-      let letters = createP("abc");
-      letters.position(random(2000),random(1000));
+      for(let x =0; x <26; x++){
+        y = createP(letters[x])
+
+        y.position(random(1920),random(1080));
+      }
+
+
+
   }
 
 }
